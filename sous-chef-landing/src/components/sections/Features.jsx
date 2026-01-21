@@ -1,63 +1,45 @@
+import phoneImg from '../../assets/images/phone.jpg';
+import pantryImg from '../../assets/images/pantry.jpg';
+import freshtablesImg from '../../assets/images/freshtables.jpg';
+import foocialMediaImg from '../../assets/images/foocial media.jpg';
+import personalizedResultsImg from '../../assets/images/personalized results.jpg';
+import recipeBookImg from '../../assets/images/recipe book.jpg';
+
 const Features = () => {
   const features = [
     {
       id: 1,
-      icon: (
-        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      ),
+      image: phoneImg,
       title: 'Snap & Discover',
       description: 'Take a photo of your fridge or pantry, and our AI instantly identifies your ingredients and suggests delicious recipes.',
     },
     {
       id: 2,
-      icon: (
-        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-        </svg>
-      ),
+      image: pantryImg,
       title: 'Smart Pantry',
       description: 'Keep track of staples you always have on hand. Never re-enter your spices, oils, or baking essentials again.',
     },
     {
       id: 3,
-      icon: (
-        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
+      image: freshtablesImg,
       title: 'Zero Waste Cooking',
       description: 'Use what you have before it goes bad. Our smart recommendations help you reduce food waste and save money.',
     },
     {
       id: 4,
-      icon: (
-        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      ),
+      image: foocialMediaImg,
       title: 'Social Inspiration',
       description: 'Share your culinary creations and discover what others are cooking. Get inspired by a community of home cooks.',
     },
     {
       id: 5,
-      icon: (
-        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-        </svg>
-      ),
+      image: personalizedResultsImg,
       title: 'Personalized Results',
       description: 'Filter by dietary preferences, cooking time, and meal type. Get recipes that match your lifestyle perfectly.',
     },
     {
       id: 6,
-      icon: (
-        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-        </svg>
-      ),
+      image: recipeBookImg,
       title: 'Recipe Saving',
       description: 'Build your personal cookbook. Save favorites, organize collections, and access your recipes anytime.',
     },
@@ -89,8 +71,12 @@ const Features = () => {
               className="group p-8 rounded-3xl bg-white hover:bg-gradient-to-br hover:from-primary-50 hover:to-accent-50 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-primary-200 hover:border-brass-400 transform hover:-translate-y-2 hover:scale-105"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-primary-400 to-brass-400 flex items-center justify-center text-white transform group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 shadow-md">
-                {feature.icon}
+              <div className="w-16 h-16 mb-4 rounded-2xl overflow-hidden transform group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <img
+                  src={feature.image}
+                  alt={feature.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-bold text-warm-900 mb-3 group-hover:text-primary-700 transition-colors">
                 {feature.title}
